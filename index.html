@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Suryandu Ganguly Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas><canvas id="sparks" aria-hidden="true"></canvas>
+<header class="nav"><div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;width:100%">
+<div class="logo">SG<b>.</b></div>
+<nav><a href="#about">About</a><a href="#work">Work</a><a href="#wins">Wins</a><a href="#skills">Skills</a><a href="#hobbies">Hobbies</a><a href="#certs">Certificates</a><a href="#contact">Contact</a></nav></div></header>
+
+<main class="wrap">
+<div class="hero">
+ <div>
+  <div class="eyebrow">Kalyani, West Bengal &middot; Open source &middot; Agri-tech</div>
+  <h1>Suryandu <span>Ganguly</span></h1>
+  <p class="lede">Agricultural engineering student who writes software. I build AI agent tools and desktop apps, win hackathons, and write novels. Currently contributing to open source and shipping a Chromium-based browser.</p>
+  <div class="cta"><a class="btn" href="Suryandu_Ganguly_Resume.pdf" download="Suryandu_Ganguly_Resume.pdf" target="_blank" rel="noopener">Download resume</a><button class="btn" id="allProofs" type="button">View all proofs</button><a class="btn" href="#work">See my work</a><a class="btn ghost" href="https://github.com/suryandugy-glitch" target="_blank" rel="noopener">GitHub</a><a class="btn ghost" href="https://www.linkedin.com/in/suryandu-ganguly01/" target="_blank" rel="noopener">LinkedIn</a><a class="btn ghost" href="https://www.instagram.com/paneer_butter_masala_19/" target="_blank" rel="noopener">Instagram</a></div>
+  <div class="chips" id="chips"></div>
+  <div class="stats"><div><b>MLH 1st</b>Open Source prize</div><div><b>8.6</b>CGPA, B.Tech</div><div><b>2</b>Books on Amazon</div><div><b>24</b>Certificates</div></div>
+ </div>
+ <div class="avatar" id="avatar"><img class="disc" alt="Portrait of Suryandu Ganguly" src="assets/dp.jpg"><div class="ring" id="ring" aria-label="Certificate proofs, click to view"></div></div>
+</div>
+
+<section id="about">
+ <h2>About</h2><p class="sub">Farm fields and file trees have more in common than they look.</p>
+ <div class="about">
+  <div>
+   <p>I am a second-year Agricultural Engineering student at JIS College of Engineering, Kalyani, with a CGPA of 8.6. Alongside that I work as a full stack developer in TypeScript, React, Node.js and Python.</p>
+   <p>I like building tools for AI agents, desktop software with Electron, and anything that sits where data meets the field. I hold a Kisan Drone Operator certificate (NSQF Level 4) and an IoT Network Specialist certificate.</p>
+   <p>Outside code I have written two bestselling books on Amazon, <em>Tantric Trail</em> and <em>Tantric Trail Part Two: Guardian</em>, and I play acoustic and electric guitar, melodica, mouth organ and keyboard.</p>
+  </div>
+  <div class="edu">
+   <div class="panel"><small>NOV 2025 &ndash; PRESENT</small><h3>B.Tech Agricultural Engineering</h3><p>JIS College of Engineering, Kalyani &middot; 2nd year &middot; CGPA 8.6</p></div>
+   <div class="panel"><small>UP TO FEB 2025</small><h3>XII (CBSE)</h3><p>Sarada Vidya Mandir &middot; 86%</p></div>
+   <div class="panel"><small>ROLE</small><h3>Campus Ambassador, Cloud Junction</h3><p>Also an official PW Channel Partner (PW Ambassador Program).</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="work">
+ <h2>Selected work</h2><p class="sub">Move your cursor over a card.</p>
+ <div class="grid">
+  <article class="tilt"><span class="badge">MLH 1st Prize</span><div class="eyebrow">Open source &middot; Oct 2026</div><h3>Agent-Reach</h3>
+   <p>Contributed to an open-source Python CLI that sets up internet access for AI agents across 16+ platforms. Won the Hacktoberfest hackathon and the MLH 1st Prize in the Open Source category.</p>
+   <span class="tag">Python</span><span class="tag">CLI</span><span class="tag">Git</span><span class="tag">GitHub</span></article>
+  <article class="tilt"><div class="eyebrow">Desktop browser</div><h3>Astrix Browser</h3>
+   <p>An independent Chromium-based browser focused on speed, security and privacy. I led architecture and the browser core in a team of three: multi-tab management, omnibox with search providers, bookmarks, history, downloads, find in page, and a sandboxed renderer with contextIsolation on and nodeIntegration off.</p>
+   <span class="tag">Electron</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Node.js</span><br><a class="lnk" href="https://github.com/suryandugy-glitch/astrix-browser" target="_blank" rel="noopener">View repository &rarr;</a></article>
+  <article class="tilt"><div class="eyebrow">Author</div><h3>Tantric Trail</h3>
+   <p>A two-part fiction series published on Amazon: <em>Tantric Trail</em> and <em>Tantric Trail Part Two: Guardian</em>. Both reached bestseller status.</p>
+   <span class="tag">Writing</span><span class="tag">Amazon</span></article>
+  <article class="tilt"><div class="eyebrow">Freelance</div><h3>Fiverr projects</h3>
+   <p>Delivered development projects for clients on Fiverr, from scoping to hand-off.</p>
+   <span class="tag">Freelance</span><span class="tag">Full stack</span></article>
+ </div>
+</section>
+
+<section id="wins">
+ <h2>Wins and activity</h2><p class="sub">Competitions, hackathons and programs.</p>
+ <div class="grid">
+  <div class="panel tilt"><small>OCT 2026</small><h3>Winner, Hacktoberfest hackathon</h3><p>Open-source AI agent project, Agent-Reach.</p></div>
+  <div class="panel tilt"><small>2026</small><h3>Track Winner, CodeVoyage</h3><p>Won the track in the CodeVoyage competition.</p></div>
+  <div class="panel tilt"><small>2026</small><h3>Open Source Contributor</h3><p>Pull requests on GitHub, including Agent-Reach.</p></div>
+  <div class="panel tilt"><small>PARTICIPATED</small><h3>Hackathons and quizzes</h3><p>Google PromptWars Virtual, Enginow Open Source Hackathon, Buildathon 2026, Doubleslash 4.0 (Jadavpur University), AI Quest (DeVriksh), Enigma and Excavate at COMPOSIT 31 (IIT Kharagpur), Gemini QuizOff 2026, MUSE at Session Zero 2026 (GDG Heritage).</p></div>
+ </div>
+</section>
+
+<section id="skills">
+ <h2>Skills</h2><p class="sub">Drag the sphere to spin it.</p>
+ <div id="sphereWrap">
+  <canvas id="sphere" aria-label="Rotating skill sphere"></canvas>
+  <div class="skl">
+   <div><h4>Languages</h4><span>C, C++, Python, TypeScript, JavaScript, HTML, CSS</span></div>
+   <div><h4>Development</h4><span>Full stack, React, Node.js, Electron desktop apps, app development</span></div>
+   <div><h4>Tools</h4><span>Git, GitHub, npm, open source contribution</span></div>
+   <div><h4>AI and data</h4><span>Generative AI, prompt engineering, AI agents and subagents (Claude, Gemini), exploratory data analysis, data analytics</span></div>
+   <div><h4>Security and IoT</h4><span>Cyber security fundamentals, identity and access management, IoT networking</span></div>
+   <div><h4>Agri engineering</h4><span>Kisan drone operation (NSQF 4), genetics, agricultural engineering fundamentals</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="hobbies">
+ <h2>Hobbies</h2><p class="sub">I play five instruments. Hover or tap a card to flip it.</p>
+ <div class="hob">
+  <button class="flip" style="--c1:#efc765;--c2:#ff9f6b"><div class="f"><span>&#127928;</span><b>Acoustic Guitar</b></div><div class="bk">Where I start every practice session.</div></button>
+  <button class="flip" style="--c1:#ff7a6b;--c2:#ff74b8"><div class="f"><span>&#9889;</span><b>Electric Guitar</b></div><div class="bk">Loud, bendy and a good break from code.</div></button>
+  <button class="flip" style="--c1:#5fd6c6;--c2:#5db8ff"><div class="f"><span>&#127932;</span><b>Melodica</b></div><div class="bk">Keys you blow into. Easy to carry anywhere.</div></button>
+  <button class="flip" style="--c1:#a58bff;--c2:#ff74b8"><div class="f"><span>&#127925;</span><b>Mouth Organ</b></div><div class="bk">Pocket sized harmonica, big sound.</div></button>
+  <button class="flip" style="--c1:#5db8ff;--c2:#a58bff"><div class="f"><span>&#127929;</span><b>Keyboard</b></div><div class="bk">Chords, melodies and the occasional song idea.</div></button>
+ </div>
+</section>
+
+<section id="certs">
+ <h2>Certificates</h2><p class="sub">Job simulations, skilling courses, workshops and events. Click any card to open the original certificate.</p>
+ <div class="filters" role="group" aria-label="Filter certificates">
+  <button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="tech">AI and Data</button><button aria-pressed="false" data-f="sec">Security and IoT</button><button aria-pressed="false" data-f="agri">Agri</button><button aria-pressed="false" data-f="event">Events</button>
+ </div>
+ <p class="sub" id="certStatus" aria-live="polite" style="margin:0 0 16px">Showing 24 of 24 certificates</p>
+ <div class="certs" id="certGrid"></div>
+ <div id="lb" role="dialog" aria-modal="true" aria-label="Certificate proof"><img id="lbImg" alt=""><div class="cap" id="lbCap"></div><div class="bar"><button id="lbPrev">Prev</button><button id="lbNext">Next</button><button id="lbX">Close</button></div></div>
+</section>
+
+<section id="contact" class="contact">
+ <h2>Let's build something</h2><p class="sub">Open to internships, open source collaboration and freelance work.</p>
+ <div class="links">
+  <a class="btn" href="Suryandu_Ganguly_Resume.pdf" download="Suryandu_Ganguly_Resume.pdf" target="_blank" rel="noopener">Download resume (PDF)</a>
+  <a class="btn ghost" href="https://github.com/suryandugy-glitch" target="_blank" rel="noopener">github.com/suryandugy-glitch</a>
+  <a class="btn ghost" href="https://www.linkedin.com/in/suryandu-ganguly01/" target="_blank" rel="noopener">linkedin.com/in/suryandu-ganguly01</a>
+  <a class="btn ghost" href="https://www.instagram.com/paneer_butter_masala_19/" target="_blank" rel="noopener">Instagram</a>
+ </div>
+ <div class="links">
+  <button class="copy" data-c="suryandugy@gmail.com">suryandugy@gmail.com &#x2398;</button>
+  <button class="copy" data-c="suryanduoneplus@gmail.com">suryanduoneplus@gmail.com &#x2398;</button>
+  <button class="copy" data-c="+91 7501555066">+91 7501555066 &#x2398;</button>
+ </div>
+ <p id="copied" class="sub" style="margin-top:12px;min-height:1.4em" aria-live="polite"></p>
+</section>
+</main>
+<footer><div class="wrap">&copy; 2026 Suryandu Ganguly &middot; Kalyani, India</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
