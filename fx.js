@@ -134,7 +134,7 @@
   /* ---- marquee ---- */
   var A = ['Python', 'TypeScript', 'React', 'Node.js', 'Electron', 'C++', 'Git', 'Generative AI', 'AI Agents', 'Claude', 'Gemini', 'Data Analytics', 'IAM', 'IoT', 'Drones', 'Genetics'];
   var B = ['Open Source', 'MLH 1st Prize', 'Hacktoberfest Winner', 'CodeVoyage Winner', 'Astrix Browser', 'Agent-Reach', 'Tantric Trail', 'Kalyani', 'JIS College of Engineering', 'Full Stack'];
-  var colors = ['#efc765', '#5fd6c6', '#ff7a6b', '#a58bff', '#5db8ff', '#ff74b8'];
+  var colors = ['#ff3d7f', '#ffc2a8', '#ff6b4a', '#b44bff', '#ff8fd8', '#ff2e93'];
   $$('.mrow').forEach(function (row, r) {
     var items = r ? B : A, html = '';
     for (var k = 0; k < 2; k++) items.forEach(function (t, i) {

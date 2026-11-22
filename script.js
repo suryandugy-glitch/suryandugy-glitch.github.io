@@ -89,7 +89,7 @@ document.querySelectorAll('.flip').forEach(b=>b.addEventListener('click',()=>b.c
 
 /* ---- hero orbit, chips, buttons, sparks ---- */
 (function(){
- const cols=['#efc765','#5fd6c6','#ff7a6b','#a58bff','#5db8ff','#ff74b8'];
+ const cols=['#ff3d7f','#ffc2a8','#ff6b4a','#b44bff','#ff8fd8','#ff2e93'];
  const pick=['Deloitte Cyber Job Simulation','GenAI Powered Data Analytics Job Simulation','Introduction to Subagents','Google PromptWars Virtual','Kisan Drone Operator, NSQF Level 4','IoT-Network Specialist Certificate, 60 hrs','Cybersecurity Analyst Job Simulation: IAM','Deloitte Data Analytics Job Simulation','Open Source Hackathon','Official PW Channel Partner','AI Tools and ChatGPT Workshop','Certificate Course in Genetics'];
  const ring=document.getElementById('ring');
  pick.forEach((t,i)=>{const gi=C.findIndex(c=>c[0]===t);if(gi<0)return;const b=document.createElement('button');b.className='orb';b.style.setProperty('--i',i);b.style.setProperty('--c',cols[i%6]);b.setAttribute('aria-label','View proof: '+t);b.innerHTML='<img alt="" src="'+PR[C[gi][3][0]]+'"><em>'+esc(t)+'</em>';b.onclick=()=>{cur=C;openLb(gi,0)};ring.appendChild(b)});
@@ -122,7 +122,7 @@ document.querySelectorAll('.flip').forEach(b=>b.addEventListener('click',()=>b.c
   const cx=Math.cos(ax),sx=Math.sin(ax),cy=Math.cos(ay),sy=Math.sin(ay);
   for(const p of P){let y=p.y*cx-p.z*sx,z=p.y*sx+p.z*cx;let X=p.x*cy+z*sy;z=-p.x*sy+z*cy;p.x=X;p.y=y;p.z=z}
   x.clearRect(0,0,cv.width,cv.height);
-  [...P].sort((a,b)=>a.z-b.z).forEach(p=>{const d=(p.z+1)/2,f=(.8+.5*d)*s*.07;x.globalAlpha=.25+.75*d;x.font=`500 ${f}px "JetBrains Mono",monospace`;x.textAlign='center';x.fillStyle=d>.6?'#efc765':'#5fd6c6';x.fillText(p.w,s+p.x*s*.78,s+p.y*s*.78)});
+  [...P].sort((a,b)=>a.z-b.z).forEach(p=>{const d=(p.z+1)/2,f=(.8+.5*d)*s*.07;x.globalAlpha=.25+.75*d;x.font=`500 ${f}px "JetBrains Mono",monospace`;x.textAlign='center';x.fillStyle=d>.6?'#ff3d7f':'#ffc2a8';x.fillText(p.w,s+p.x*s*.78,s+p.y*s*.78)});
   if(!drag){ax*=.98;ay=ay*.98+(RM?0:.0006)*.02}
   if(!RM)requestAnimationFrame(draw)
  }

@@ -37,11 +37,11 @@
     ' vec2 q=vec2(fbm(p*1.6+t),fbm(p*1.6+vec2(5.2,1.3)-t));' +
     ' vec2 r=vec2(fbm(p*1.8+3.*q+vec2(1.7,9.2)+t*1.3),fbm(p*1.8+3.*q+vec2(8.3,2.8)-t));' +
     ' float f=fbm(p*1.5+3.5*r+uS*1.2);' +
-    ' vec3 c1=vec3(.027,.075,.10),c2=vec3(.05,.35,.34),c3=vec3(.38,.2,.7),c4=vec3(.9,.45,.35);' +
+    ' vec3 c1=vec3(.04,.012,.03),c2=vec3(.42,.04,.22),c3=vec3(.36,.1,.62),c4=vec3(1.,.5,.34);' +
     ' vec3 col=mix(c1,c2,smoothstep(.2,.8,f)*.7);' +
     ' col=mix(col,c3,smoothstep(.35,.9,length(q))*.35);' +
     ' col+=c4*pow(smoothstep(.55,1.,r.x),3.)*.18;' +
-    ' vec2 m=(uM*uRes-.5*uRes)/uRes.y;col+=vec3(.2,.5,.55)*.2/(1.+14.*dot(p-m,p-m));' +
+    ' vec2 m=(uM*uRes-.5*uRes)/uRes.y;col+=vec3(.65,.14,.32)*.24/(1.+14.*dot(p-m,p-m));' +
     ' col*=1.-1.1*dot(uv-.5,uv-.5);' +
     ' col+=(h(gl_FragCoord.xy+uT)-.5)*.02;' +
     ' gl_FragColor=vec4(col*.8,1.);}'
@@ -52,7 +52,7 @@
     'attribute vec3 aA,aB;attribute vec4 aR;' +
     'uniform float uMix,uT,uPx,uAsp,uPitch,uYaw,uPulseT,uDim;uniform vec2 uM,uOff,uClick;uniform float uScale;' +
     'varying vec3 vC;varying float vA;' +
-    'vec3 pal(float k){k=fract(k)*5.;vec3 a=vec3(.94,.78,.4),b=vec3(.37,.84,.78),c=vec3(1.,.48,.42),d=vec3(.65,.55,1.),e=vec3(.36,.72,1.);' +
+    'vec3 pal(float k){k=fract(k)*5.;vec3 a=vec3(1.,.24,.5),b=vec3(1.,.76,.66),c=vec3(1.,.42,.29),d=vec3(.71,.29,1.),e=vec3(1.,.56,.85);' +
     ' if(k<1.)return mix(a,b,k);if(k<2.)return mix(b,c,k-1.);if(k<3.)return mix(c,d,k-2.);if(k<4.)return mix(d,e,k-3.);return mix(e,a,k-4.);}' +
     'void main(){' +
     ' float f=clamp(uMix*1.8-aR.x*.8,0.,1.);f=f*f*(3.-2.*f);' +
