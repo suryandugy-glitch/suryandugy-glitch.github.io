@@ -104,54 +104,7 @@ document.querySelectorAll('.flip').forEach(b=>b.addEventListener('click',()=>b.c
  const cv=document.getElementById('sparks'),x=cv.getContext('2d');let P=[];
  function sz(){cv.width=innerWidth;cv.height=innerHeight}addEventListener('resize',sz);sz();
  addEventListener('pointermove',e=>{for(let k=0;k<2;k++)P.push({x:e.clientX,y:e.clientY,vx:(Math.random()-.5)*2.4,vy:(Math.random()-.5)*2.4-.6,l:1,c:cols[Math.random()*6|0],r:2+Math.random()*3})});
- (function loop(){x.clearRect(0,0,cv.width,cv.height);P=P.filter(p=>p.l>0);P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.l-=.025;x.globalAlpha=p.l;x.fillStyle=p.c;x.beginPath();x.arc(p.x,p.y,p.r*p.l,0,7);x.fill()});requestAnimationFrame(loop)})();
-})();
-
-/* ---- WebGL field: wheat-field terrain + drifting data nodes ---- */
-(function(){
- if(!window.THREE)return;
- const cv=document.getElementById('gl');
- const R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
- R.setPixelRatio(Math.min(devicePixelRatio,2));
- const S=new THREE.Scene();S.fog=new THREE.Fog(0x07131a,8,34);
- const cam=new THREE.PerspectiveCamera(55,1,.1,80);cam.position.set(0,4.2,10);
- const geo=new THREE.PlaneGeometry(60,40,70,46);geo.rotateX(-Math.PI/2);
- const mat=new THREE.MeshBasicMaterial({color:0x5fd6c6,wireframe:true,transparent:true,opacity:.22});
- const land=new THREE.Mesh(geo,mat);land.position.y=-2;S.add(land);
- const pos=geo.attributes.position,base=pos.array.slice();
- // wheat points
- const N=900,pg=new THREE.BufferGeometry(),pp=new Float32Array(N*3);
- for(let i=0;i<N;i++){pp[i*3]=(Math.random()-.5)*50;pp[i*3+1]=Math.random()*12-1;pp[i*3+2]=(Math.random()-.5)*30}
- pg.setAttribute('position',new THREE.BufferAttribute(pp,3));
- const pts=new THREE.Points(pg,new THREE.PointsMaterial({color:0xefc765,size:.06,transparent:true,opacity:.8}));S.add(pts);
- const cn=700,cg=new THREE.BufferGeometry(),cp=new Float32Array(cn*3),cc=new Float32Array(cn*3),pal=[[.94,.78,.4],[.37,.84,.78],[1,.48,.42],[.65,.55,1],[.36,.72,1],[1,.45,.72]];
- for(let i=0;i<cn;i++){cp[i*3]=(Math.random()-.5)*40;cp[i*3+1]=Math.random()*14-2;cp[i*3+2]=(Math.random()-.5)*24;const c=pal[i%6];cc.set(c,i*3)}
- cg.setAttribute('position',new THREE.BufferAttribute(cp,3));cg.setAttribute('color',new THREE.BufferAttribute(cc,3));
- const cpts=new THREE.Points(cg,new THREE.PointsMaterial({size:.1,vertexColors:true,transparent:true,opacity:.9}));S.add(cpts);
- // hero knot
- const knot=new THREE.Mesh(new THREE.TorusKnotGeometry(1.5,.38,160,18),new THREE.MeshBasicMaterial({color:0xefc765,wireframe:true,transparent:true,opacity:.35}));
- knot.position.set(4.5,2.2,-2);S.add(knot);
- const ico=new THREE.Mesh(new THREE.IcosahedronGeometry(.9,1),new THREE.MeshBasicMaterial({color:0x5fd6c6,wireframe:true}));
- ico.position.set(-5,3,-4);S.add(ico);
- const shapes=[];[[0xff7a6b,'oct',-7,-.5,-6],[0xa58bff,'tor',7,-.8,-5],[0x5db8ff,'tet',-3,5,-8],[0xff74b8,'oct',2,6.2,-9],[0xefc765,'tor',-9,3,-9],[0x5fd6c6,'tet',9,5,-7]].forEach(a=>{const g=a[1]=='oct'?new THREE.OctahedronGeometry(.8):a[1]=='tor'?new THREE.TorusGeometry(.7,.22,10,28):new THREE.TetrahedronGeometry(.9);const m=new THREE.Mesh(g,new THREE.MeshBasicMaterial({color:a[0],wireframe:true,transparent:true,opacity:.75}));m.position.set(a[2],a[3],a[4]);S.add(m);shapes.push(m)});
- let mx=0,my=0,sy=0;
- addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
- addEventListener('scroll',()=>sy=scrollY/Math.max(1,document.body.scrollHeight-innerHeight),{passive:true});
- function size(){R.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();knot.visible=ico.visible=innerWidth>700;shapes.forEach(m=>m.visible=innerWidth>700)}
- addEventListener('resize',size);size();
- const t0=performance.now();
- function frame(){
-  const t=(performance.now()-t0)/1000*(RM?0:1);
-  for(let i=0;i<pos.count;i++){const x=base[i*3],z=base[i*3+2];pos.array[i*3+1]=Math.sin(x*.35+t*.8)*.5+Math.cos(z*.4+t*.6)*.5+Math.sin((x+z)*.15)*.8}
-  pos.needsUpdate=true;
-  pts.rotation.y=t*.02;cpts.rotation.y=-t*.03+mx*.6;cpts.rotation.x=my*.3;pts.position.y=Math.sin(t*.3)*.2;
-  knot.rotation.x=t*.25+sy*6;knot.rotation.y=t*.2;shapes.forEach((m,i)=>{m.rotation.x=t*(.3+i*.05);m.rotation.y=t*(.4-i*.03);m.position.y+=Math.sin(t+i)*.004});ico.rotation.y=t*.3;ico.rotation.x=t*.2+sy*4;
-  cam.position.x+=((mx*3)-cam.position.x)*.04;cam.position.y+=((4.2-my*1.5-sy*2.5)-cam.position.y)*.04;
-  cam.lookAt(0,1.2-sy*1.5,0);
-  R.render(S,cam);
-  if(!RM)requestAnimationFrame(frame)
- }
- frame();
+ (function loop(){x.clearRect(0,0,cv.width,cv.height);P=P.filter(p=>p.l>0);P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.l-=.025;x.globalAlpha=p.l;x.fillStyle=p.c;x.beginPath();x.arc(p.x,p.y,Math.max(0,p.r*p.l),0,7);x.fill()});requestAnimationFrame(loop)})();
 })();
 
 /* ---- skill sphere ---- */

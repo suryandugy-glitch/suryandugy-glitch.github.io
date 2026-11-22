@@ -5,10 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Suryandu Ganguly Portfolio</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
+<div id="loader" aria-hidden="true"><div class="ld"><span class="ldm">SG<b>.</b></span><div class="ldbar"><i id="ldbar"></i></div><b id="ldn">0</b></div></div>
+<div id="prog"></div><div id="cur"></div><div id="curd"></div>
 <canvas id="gl" aria-hidden="true"></canvas><canvas id="sparks" aria-hidden="true"></canvas>
 <header class="nav"><div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;width:100%">
 <div class="logo">SG<b>.</b></div>
@@ -18,13 +21,19 @@
 <div class="hero">
  <div>
   <div class="eyebrow">Kalyani, West Bengal &middot; Open source &middot; Agri-tech</div>
+  <div class="role" aria-hidden="true"><span id="role">Agri-tech engineer</span><i class="caret"></i></div>
   <h1>Suryandu <span>Ganguly</span></h1>
   <p class="lede">Agricultural engineering student who writes software. I build AI agent tools and desktop apps, win hackathons, and write novels. Currently contributing to open source and shipping a Chromium-based browser.</p>
   <div class="cta"><a class="btn" href="Suryandu_Ganguly_Resume.pdf" download="Suryandu_Ganguly_Resume.pdf" target="_blank" rel="noopener">Download resume</a><button class="btn" id="allProofs" type="button">View all proofs</button><a class="btn" href="#work">See my work</a><a class="btn ghost" href="https://github.com/suryandugy-glitch" target="_blank" rel="noopener">GitHub</a><a class="btn ghost" href="https://www.linkedin.com/in/suryandu-ganguly01/" target="_blank" rel="noopener">LinkedIn</a><a class="btn ghost" href="https://www.instagram.com/paneer_butter_masala_19/" target="_blank" rel="noopener">Instagram</a></div>
   <div class="chips" id="chips"></div>
-  <div class="stats"><div><b>MLH 1st</b>Open Source prize</div><div><b>8.6</b>CGPA, B.Tech</div><div><b>2</b>Books on Amazon</div><div><b>24</b>Certificates</div></div>
+  <div class="stats"><div><b>MLH 1st</b>Open Source prize</div><div><b data-count="8.6" data-dec="1">8.6</b>CGPA, B.Tech</div><div><b data-count="2">2</b>Books on Amazon</div><div><b data-count="24">24</b>Certificates</div></div>
  </div>
  <div class="avatar" id="avatar"><img class="disc" alt="Portrait of Suryandu Ganguly" src="assets/dp.jpg"><div class="ring" id="ring" aria-label="Certificate proofs, click to view"></div></div>
+</div>
+
+<div class="marq" aria-hidden="true">
+ <div class="mrow" data-dir="1"></div>
+ <div class="mrow rev" data-dir="-1"></div>
 </div>
 
 <section id="about">
@@ -125,7 +134,8 @@
 </main>
 <footer><div class="wrap">&copy; 2026 Suryandu Ganguly &middot; Kalyani, India</div></footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="script.js"></script>
+<script src="gl.js"></script>
+<script src="fx.js"></script>
 </body>
 </html>

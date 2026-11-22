@@ -1,9 +1,11 @@
-Suryandu Ganguly portfolio
+Suryandu Ganguly portfolio (v2: motion + WebGL)
 
-index.html   page structure (HTML)
-style.css    all styling (CSS)
-script.js    3D scene, orbit, filters, certificate viewer (JavaScript)
-assets/      dp.jpg and assets/proofs/ certificate images
+index.html   page structure
+style.css    styling and animations
+script.js    certificates, orbit, filters, skill sphere
+gl.js        WebGL: aurora background + morphing particles (no libraries)
+fx.js        intro loader, text reveals, counters, marquee, cursor
+assets/      dp.jpg and certificate images (assets/proofs/)
 Suryandu_Ganguly_Resume.pdf   resume download
 
-Upload everything in this folder (keep the folder structure) to the root of your GitHub repo.
+Upload everything, keeping the folder structure, to the root of the GitHub repo.
